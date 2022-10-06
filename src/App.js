@@ -7,7 +7,7 @@ export default function App() {
     <div className="App">
       <div className='container'>
     
-      <Weather />
+      <Weather defaultCity="Uzhhorod"/>
       <footer>
         This project was coded by Oksana Yuriychuk and is {" "}
       <a href='https://github.com/OksanaYur/week-5-react' target="_blank">
