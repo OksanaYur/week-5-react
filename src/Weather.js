@@ -60,6 +60,7 @@ if (weatherData.ready) {
                 <img 
                 src={weatherData.iconUrl}
                 alt={weatherData.description} 
+                
                 />
                 <div className="float-left">
                 <span className="temperature">
