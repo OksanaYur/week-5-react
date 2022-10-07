@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "./Weather.css";
 import axios from "axios";
-import Date from "./Date";
+import Date from "./CurrentDate";
+import WeatherDescription from "./WeatherDescription";
 
 
 export default function Weather(props) {
@@ -13,7 +14,7 @@ function displayWeather(response) {
             ready: true,
             temperature: response.data.main.temp,
             wind: response.data.wind.speed,
-            city: response.data.main,
+            city: response.data.name,
             humidity: response.data.main.humidity,
             description: response.data.Weather[0].description,
             date: new Date(response.data.dt * 1000),
@@ -24,7 +25,7 @@ function displayWeather(response) {
 if (weatherData.ready) {
     return (
 <div className="Weather">
-        <form>
+        <form >
         <div className="row">
             <div className="col-9">
                 <input
@@ -45,42 +46,8 @@ if (weatherData.ready) {
            </div>
          </div>
         </form>
-        <h1>{weatherData.city}</h1>
-        <ul>
-            <li>
-            <Date date={weatherData.date} />
-            </li>
-            <li className="text-capitalized">
-                {weatherData.description}
-            </li>
-        </ul>
-        <div className="row mt-3">
-            <div className="col-6">
-                <div className="clearfix">
-                <img 
-                src={weatherData.iconUrl}
-                alt={weatherData.description} 
-                
-                />
-                <div className="float-left">
-                <span className="temperature">
-                    {Math.round(weatherData.temperature)}
-                    </span>
-                <span 
-                className="unit">
-                    °C
-                    </span> 
-               </div>
-              </div>
-            </div>
-            <div className="col-6">
-                <ul>
-                    <li> Humidity: {weatherData.humidity} %</li>
-                    <li> Wind: {weatherData.wind} km/h </li>
-                </ul>
-            </div>
-        </div>
-    </div>
+        <WeatherDescription data={props.data.date} />
+         </div>
     );
 } else {
     const apiKey = "094780c710fa4efd669f0df8c3991927";
