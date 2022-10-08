@@ -4,7 +4,8 @@
     color: rgb(135, 135, 135);
     padding: 17px;
     margin: 25px auto;
-        border-radius: 40px;
+    border-radius: 40px;
+    background-color: lightgray;
 }
 .Weather h1 {
 font-size: 50px;
@@ -18,9 +19,11 @@ margin: 20px 0 0 0;
     margin: 0;
     padding: 0;
     list-style: none;
+    
 }
 .Weather form {
     margin-bottom: 20px;
+    
 }
 .Weather canvas {
     
