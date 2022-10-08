@@ -17,11 +17,9 @@ export default function WeatherDescription(props) {
         <div className="row mt-3">
             <div className="col-6">
                 <div className="clearfix">
-                <div className="float-left">
+                <div >
                     <WeatherIcon code={props.data.icon} />
-                    </div>
-                <div className="float-left">
-                <span className="temperature">
+                    <span className="temperature">
                     {Math.round(props.data.temperature)}
                     </span>
                 <span 
@@ -34,7 +32,7 @@ export default function WeatherDescription(props) {
             <div className="col-6">
                 <ul>
                     <li> Humidity: {props.data.humidity} %</li>
-                    <li> Wind: {props.data.wind} km/h </li>
+                    <li> Wind: {Math.round(props.data.wind)} km/h </li>
                 </ul>
             </div>
         </div>
