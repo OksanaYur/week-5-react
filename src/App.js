@@ -12,10 +12,10 @@ export default function App() {
         This project was coded by Oksana Yuriychuk and is {" "}
       <a href='https://github.com/OksanaYur/week-5-react' 
       target="_blank"
-      rel="noreferrer">
+      rel="noopener noreferrer">
         open-sourced on GitHub</a> and <a href='https://flourishing-cajeta-328a3e.netlify.app/' 
       target="_blank"
-      rel="noreferrer">
+      rel="noopener noreferrer">
         hosted on Netlify</a>
         </footer>  
         </div> 
