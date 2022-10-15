@@ -5,7 +5,7 @@
     padding: 17px;
     margin: 25px auto;
     border-radius: 40px;
-    background-color: lightgray;
+    
 }
 .Weather h1 {
 font-size: 50px;
@@ -28,8 +28,9 @@ margin: 20px 0 0 0;
 .Weather canvas {
     
     display: inline-block;
-    margin-left: 150px;
-    margin-bottom: -70px;
+    margin-top: 10px;
+    margin-left: -3px;
+    margin-bottom: 7px;
     
 }
 

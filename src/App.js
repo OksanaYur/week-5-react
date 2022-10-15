@@ -13,7 +13,10 @@ export default function App() {
       <a href='https://github.com/OksanaYur/week-5-react' 
       target="_blank"
       rel="noreferrer">
-        open-sourced on GitHub</a> 
+        open-sourced on GitHub</a> and <a href='https://flourishing-cajeta-328a3e.netlify.app/' 
+      target="_blank"
+      rel="noreferrer">
+        hosted on Netlify</a>
         </footer>  
         </div> 
         </div>
