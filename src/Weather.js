@@ -8,8 +8,8 @@ import WeatherForecast from "./WeatherForecast";
 export default function Weather(props) {
 const [weatherData, setWeatherData] = useState({ ready: false });
 const [city, setCity] = useState(props.defaultCity);
-function displayWeather(response) {
-     
+
+function displayWeather(response) {  
     setWeatherData ({
             ready: true,
             coordinates: response.data.coord,
@@ -23,12 +23,6 @@ function displayWeather(response) {
         });
 }
 
-function search() {
-    const apiKey = "094780c710fa4efd669f0df8c3991927";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(displayWeather);
-}
-
 function handleSubmit(event) {
 event.preventDefault();
 search();
@@ -39,10 +33,16 @@ function handleCityChange(event) {
 setCity(event.target.value);
 }
 
+function search() {
+    const apiKey = "094780c710fa4efd669f0df8c3991927";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(displayWeather);
+}
+
 if (weatherData.ready) {
     return (
 <div className="Weather">
-        <form onSubmit={handleSubmit} >
+        <form onSubmit={handleSubmit}>
         <div className="row">
             <div className="col-9">
                 <input
@@ -50,22 +50,20 @@ if (weatherData.ready) {
                 placeholder="Enter a city..."
                 className="form-control"
                 autoFocus="on" 
-                onChange={handleCityChange}/>
-                </div>
+                onChange={handleCityChange} 
+                />
+            </div>
                 <div className="col-3">
                     <input 
                     type="submit"
                     value="Search"
-                    className="btn btn-primary w-100" />
+                    className="btn btn-primary w-100" 
+                    />
                 </div>
         </div>
-        <div className="row">
-            <div className="col-6">
-           </div>
-         </div>
         </form>
         <WeatherDescription data={weatherData} />
-        <WeatherForecast  coordinates={weatherData.coordinates} />
+        <WeatherForecast coordinates={weatherData.coordinates} />
          </div>
     );
 } else {

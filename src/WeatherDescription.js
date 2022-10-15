@@ -1,5 +1,5 @@
 import React from "react";
-import Date from "./CurrentDate";
+import CurrentDate from "./CurrentDate";
 import WeatherIcon from "./WeatherIcon";
 import WeatherTemperature from "./WeatherTemperature";
 
@@ -9,7 +9,7 @@ export default function WeatherDescription(props) {
             <h1>{props.data.city}</h1>
         <ul>
             <li>
-            <Date date={props.data.date} />
+            <CurrentDate date={props.data.date} />
             </li>
             <li className="text-capitalized">
                 {props.data.description}
@@ -33,7 +33,6 @@ export default function WeatherDescription(props) {
                 </ul>
             </div>
         </div>
-
-        </div>
+   </div>
     );
 }
